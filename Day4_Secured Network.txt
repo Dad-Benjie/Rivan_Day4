@@ -1,5 +1,5 @@
 
-Your Monitor Number = #$34T#
+Your Monitor Number = 61
 __________
 **********
 00. Warm up for Day 4
@@ -104,6 +104,8 @@ conf t
 conf t
  interface ___
   ip add ___.___.___.___  ___.___.___.___
+  
+  
   no shut
   end
 
@@ -121,6 +123,9 @@ conf t
   network ___.___.___.___  ___.___.___.___ area ___
   network ___.___.___.___  ___.___.___.___ area ___
   network ___.___.___.___  ___.___.___.___ area ___
+  
+  
+  
   end
 
 @R2
@@ -133,6 +138,11 @@ conf t
   network ___.___.___.___  ___.___.___.___ area ___
   network ___.___.___.___  ___.___.___.___ area ___
   network ___.___.___.___  ___.___.___.___ area ___
+  
+  
+  
+  
+  
   end
   
 @R3
@@ -145,6 +155,11 @@ conf t
   network ___.___.___.___  ___.___.___.___ area ___
   network ___.___.___.___  ___.___.___.___ area ___
   network ___.___.___.___  ___.___.___.___ area ___
+  
+  
+  
+  
+  
   end
   
   
@@ -154,6 +169,11 @@ Task 3.
 conf t
  ip route 192.168.5.33 255.255.255.___  ___.___.___.___
  ip route 192.168.5.33 255.255.255.___  ___.___.___.___  ___
+ 
+ 
+ 
+ 
+ 
  end
 
 
@@ -336,7 +356,7 @@ type cisco_ios_interfaceurl file:////etc/puppetlabs/puppet/devices/rivan.com.con
 
 # Credentials
 
-host: "10.#$34T#.1.4"
+host: "10.61.1.4"
 port: 22
 user: admin
 password: password
@@ -384,14 +404,14 @@ __________
 "Connect to websites through IP addresses alone"
 
 @cmd
-ping google.com         ___.___.___.___
-ping cisco.com     
-ping rivanit.com   
+ping google.com         142.251.221.36
+ping cisco.com     		27.49.36.99
+ping rivanit.com   		62.72.57.245
 
 
 
 Set up your own DNS Server.
- - Create a Zone File for ccna#$34T#.com
+ - Create a Zone File for ccna61.com
    Forward & Reverse
 
  - DNS Records
@@ -417,7 +437,7 @@ Exercise 02: Configure DNS records for devices:
   Ephone2,    e2
 
 
-Configure a webserver for ccna#$34T#.com
+Configure a webserver for ccna61.com
 
 
 
@@ -445,33 +465,33 @@ Install-WindowsFeature -name dns -includeManagementTools
 #########################################################################
 ### Powershell Script for DNS Zones & Records
 
-add-DnsServerPrimaryZone -Name "ccna#$34T#.com" -ZoneFile "ccna#$34T#.com.dns"
+add-DnsServerPrimaryZone -Name "ccna61.com" -ZoneFile "ccna61.com.dns"
 
-﻿add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ns -ipv4address 10.#$34T#.1.7
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name www -hostname ns.ccna#$34T#.com
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name imap -hostname ns.ccna#$34T#.com
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name pop -hostname ns.ccna#$34T#.com
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name smtp -hostname ns.ccna#$34T#.com
+﻿add-DnsServerResourceRecord -zonename ccna61.com -A -name ns -ipv4address 10.61.1.7
+add-DnsServerResourceRecord -zonename ccna61.com -Cname -name www -hostname ns.ccna61.com
+add-DnsServerResourceRecord -zonename ccna61.com -Cname -name imap -hostname ns.ccna61.com
+add-DnsServerResourceRecord -zonename ccna61.com -Cname -name pop -hostname ns.ccna61.com
+add-DnsServerResourceRecord -zonename ccna61.com -Cname -name smtp -hostname ns.ccna61.com
 
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name cb -ipv4address 10.#$34T#.1.4
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ct -ipv4address 10.#$34T#.1.2
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name cm -ipv4address 10.#$34T#.100.8
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ed -ipv4address 10.#$34T#.#$34T#.1
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name e1 -ipv4address 10.#$34T#.100.101
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name e2 -ipv4address 10.#$34T#.100.102
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name c6 -ipv4address 10.#$34T#.50.6
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name c8 -ipv4address 10.#$34T#.50.8
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ap -ipv4address 10.#$34T#.10.3
+add-DnsServerResourceRecord -zonename ccna61.com -A -name cb -ipv4address 10.61.1.4
+add-DnsServerResourceRecord -zonename ccna61.com -A -name ct -ipv4address 10.61.1.2
+add-DnsServerResourceRecord -zonename ccna61.com -A -name cm -ipv4address 10.61.100.8
+add-DnsServerResourceRecord -zonename ccna61.com -A -name ed -ipv4address 10.61.61.1
+add-DnsServerResourceRecord -zonename ccna61.com -A -name e1 -ipv4address 10.61.100.101
+add-DnsServerResourceRecord -zonename ccna61.com -A -name e2 -ipv4address 10.61.100.102
+add-DnsServerResourceRecord -zonename ccna61.com -A -name c6 -ipv4address 10.61.50.6
+add-DnsServerResourceRecord -zonename ccna61.com -A -name c8 -ipv4address 10.61.50.8
+add-DnsServerResourceRecord -zonename ccna61.com -A -name ap -ipv4address 10.61.10.3
 
 
 #########################################################################
 ### Powershell Script for Website configuration
 
-New-Website -name "ccna#$34T#.com" -hostheader "www.ccna#$34T#.com" -physicalpath "d:\webs\officebiz"
+New-Website -name "ccna61.com" -hostheader "www.ccna61.com" -physicalpath "d:\webs\officebiz"
 
 
 
-Exercise 03: Configure DNS and Web for bpiph#$34T#.com
+Exercise 03: Configure DNS and Web for bpiph61.com
 
   - The zone file must contain records for Web, eMail, CUCM,EDGE, ePhone1 and ePhone2.
   - Assign the bpi html as its own main page.
@@ -506,8 +526,8 @@ Configure Forwarders
 
 ! You do not forward things yourself
 
-Remove-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10, 10.31.1.10, 10.32.1.10, 10.41.1.10, 10.42.1.10,10.51.1.10, 10.52.1.10, 10.61.1.10, 10.62.1.10, 10.71.1.10, 10.72.1.10, 10.81.1.10, 10.82.1.10 -PassThru
-Add-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10, 10.31.1.10, 10.32.1.10, 10.41.1.10, 10.42.1.10,10.51.1.10, 10.52.1.10, 10.61.1.10, 10.62.1.10, 10.71.1.10, 10.72.1.10, 10.81.1.10, 10.82.1.10 -PassThru
+Remove-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10, 10.31.1.10, 10.32.1.10, 10.41.1.10, 10.42.1.10,10.51.1.10, 10.52.1.10, 10.62.1.10, 10.71.1.10, 10.72.1.10, 10.81.1.10, 10.82.1.10 -PassThru
+Add-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10, 10.31.1.10, 10.32.1.10, 10.41.1.10, 10.42.1.10,10.51.1.10, 10.52.1.10, 10.62.1.10, 10.71.1.10, 10.72.1.10, 10.81.1.10, 10.82.1.10 -PassThru
 
 
 
@@ -518,9 +538,9 @@ Verify:
 @Cisco
 conf t
  ip domain lookup
- ip name-server 10.#$34T#.1.10
+ ip name-server 10.61.1.10
  end
-ping ns.ccna#$34T#.com
+ping ns.ccna61.com
 
 
 
@@ -531,13 +551,13 @@ __________
 Upload configurations to FTP Server. (CoreTaas, CoreBaba, CUCM, EDGE)
 
 @Cisco
-copy run ftp://ccna#$34T#.com
+copy run ftp://ccna61.com
 
 
 How to copy the current IOS of a Cisco Switch
 
 @Cisco
-archive upload-sw ftp://ccna#$34T#.com
+archive upload-sw ftp://ccna61.com
 
 
 
@@ -549,7 +569,7 @@ Create an MX record on the Zone file.
 	Install .NET Framework 3.5 Features
 
 
-Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
+Create users and emails for ccna61.com and bpiph61.com
 
   User1: ac
   Pass: C1sc0123
@@ -637,7 +657,7 @@ Segments
 Three way handshake
 Sliding Window
 
-Commands: nmap -v 10.#$34T#.1.10
+Commands: nmap -v 10.61.1.10
 
 Well-known ports 0 - 1023
 Registered ports 1024 - 49151
@@ -718,7 +738,7 @@ conf t
   ip add 10.10.10.11 255.255.255.0
   no shut
  ip route 0.0.0.0 0.0.0.0 208.8.8.2
- ip name-server 8.8.8.8 10.#$34T#.1.10
+ ip name-server 8.8.8.8 10.61.1.10
  ip domain lookup
  end
 wr
@@ -770,15 +790,15 @@ There's a big problem in humanity.
 It's corrupting everyone's brains.
 
 @cmd
-youporn.com
-pornhub.com
-redtube.com
-faketaxi.com
-bangbros.com
-bangbus.com
-pinayflix.com
-xhamster.com
-iyottube.com
+youporn.com 66.254.0.0
+pornhub.com 66.254.0.0
+redtube.com 66.254.0.0
+faketaxi.com 66.254.0.0
+bangbros.com  66.254.0.0
+bangbus.com 104.21.0.0
+pinayflix.com 104.21.0.0
+xhamster.com 104.18.0.0
+iyottube.com 208.77.0.0
 
 Protect your most important asset: The brain
 
@@ -787,9 +807,11 @@ Protect your most important asset: The brain
 config t
  no ip access-list standard NOPORNFAP
  ip access-list standard NOPORNFAP
-  deny __.__.__.__  __.__.__.__
-  deny __.__.__.__  __.__.__.__
-  deny __.__.__.__  __.__.__.__
+  deny 66.254.0.0 0.0.255.255
+  deny 104.21.0.0 0.0.255.255
+  deny 172.67.0.0 0.0.255.255
+  deny 104.18.0.0 0.0.255.255
+  deny 208.77.0.0 0.0.255.255
   permit any
  int gi 1
   ip access-group NOPORNFAP in
@@ -829,20 +851,22 @@ config t
 Exercise 04: Block schools
 
 @cmd
-ping www.dlsu.edu.ph 
-ping www.ccp.edu.ph      
-ping www.feu.edu.ph 
-ping  www.ue.edu.ph 
-ping  www.yourschool.edu.ph = _________
+ping www.dlsu.edu.ph  104.20.0.0
+ping www.ccp.edu.ph    50.6.0.0  
+ping www.feu.edu.ph   184.168.0.0
+ping  www.ue.edu.ph   155.137.0.0
+ping  www.mmsu.edu.ph = 122.55.0.0
 
 
 @UTM-PH
 config t
  no ip access-list standard NOSKUL
  ip access-list standard NOSKUL
-  deny __.__.__.__  __.__.__.__
-  deny __.__.__.__  __.__.__.__
-  deny __.__.__.__  __.__.__.__
+  deny 104.20.0.0 0.0.255.255
+  deny 50.6.0.0 0.0.255.255
+  deny 184.168.0.0 0.0.255.255
+  deny 155.137.0.0 0.0.255.255
+  deny 122.55.0.0 0.0.255.255
   permit any
  int gi 1
   ip access-group NOSKUL in
@@ -932,7 +956,7 @@ config t
  ip host www.web311.com 192.168.103.11
  end
 
-Review: Create a DNS A record for www.ccna#$34T#.com
+Review: Create a DNS A record for www.ccna61.com
 192.168.103.10 www.web310.com
 192.168.103.11 www.web311.com
   
@@ -951,8 +975,8 @@ nmap -v www.web311.com
 
 Exercise 07: BLUE TEAM, protect your POGO sites.
 Open only the following port:
-  www.web310.com open only http, https, ping
-  www.web311.com open only dns, https, ssh
+  www.web310.com open only http 80, https 443, ping icmp
+  www.web311.com open only dns 53, https 443, ssh 22
   
    protocol         hacker    victim       port
 tcp,udp,icmp,IP     Any      web310/11
@@ -961,7 +985,7 @@ tcp,udp,icmp,IP     Any      web310/11
 conf t
  service timestamps log datetime
  service timestamps debug datetime
- logging 10.#$34T#.1.10
+ logging 10.61.1.10
  logging trap 5
  end
 wr
@@ -970,12 +994,12 @@ wr
 conf t
  no ip access-list extended FWP1
  ip access-list extended FWP1
- permit tcp Any host www.web310.com eq __ log
- permit tcp Any host www.web310.com eq __ log
- permit __ Any host www.web310.com log
- permit tcp Any host www.web311.com eq __ log
- permit tcp Any host www.web311.com eq __ log
- permit tcp Any host www.web311.com eq __ log
+ permit tcp Any host www.web310.com eq 443 log
+ permit tcp Any host www.web310.com eq 80 log
+ permit icmp Any host www.web310.com log
+ permit tcp Any host www.web311.com eq 53 log
+ permit tcp Any host www.web311.com eq 443 log
+ permit tcp Any host www.web311.com eq 22 log
  Int gi 3
   ip access-group FWP1 in
   end
@@ -1003,19 +1027,20 @@ CTRL + SHIFT + 6 Then X
 Exercise 08: 
 Create an access-list named FWP2 to open the following ports:
 
-www.web310.com open only ssh, dns, http
-www.web311.com open only telnet, ssh, https, ping
+www.web310.com open only ssh 22, dns 53, http 80
+www.web311.com open only telnet 23, ssh 22, https 443, ping icmp
 
 @UTM-PH
 conf t
  no ip access-list extended FWP2
  ip access-list extended FWP2
- permit __ Any host www.____.com eq __ log
- permit __ Any host www.____.com eq __ log
- permit __ Any host www.____.com log
- permit __ Any host www.____.com eq __ log
- permit __ Any host www.____.com eq __ log
- permit __ Any host www.____.com eq __ log
+ permit tcp Any host www.web310.com eq 22 log
+ permit tcp Any host www.web310.com eq 53 log
+ permit tcp Any host www.web310.com eq 80 log
+ permit tcp Any host www.web311.com eq 23 log
+ permit tcp Any host www.web311.com eq 22 log
+ permit tcp Any host www.web311.com eq 443 log
+ permit icmp Any host www.web311.com log
  Int gi 3
   ip access-group FWP2 in
   end
@@ -1028,8 +1053,8 @@ www.web311.com open only ping
 config t
  no ip access-list Extended PRANING3
  ip access-list Extended PRANING3
-  ?
-  ?
+  permit tcp Any host www.web310.com eq 443 log
+  permit icmp Any host www.web311.com log
  int gi 3
   ip access-group PRANING3 in
   end
@@ -1073,16 +1098,25 @@ conf t
 
 Now, open the following ports otherwise you will work in Jollibee.
 
-www.web310.com open only daytime, chargen, skinny-client-control-protocol
-www.web311.com open only domain, discard, sip, finger, h323q931, ping, ntp
+www.web310.com open only daytime 13, chargen 19, skinny-client-control-protocol 2000
+www.web311.com open only domain 53, discard 9, sip 5060, finger 79, h323q931 1720, ping icmp, ntp 123
 
 @UTM-PH
 config t
- no ip access-list ______ NOJOLLIBEEPLS
- ip access-list ______ NOJOLLIBEEPLS
-
+ no ip access-list extended NOJOLLIBEEPLS
+ ip access-list extended NOJOLLIBEEPLS
+   permit tcp Any host www.web310.com eq 13 log
+   permit tcp Any host www.web310.com eq 19 log
+   permit tcp Any host www.web310.com eq 2000 log
+   permit tcp Any host www.web311.com eq 53 log
+   permit tcp Any host www.web311.com eq 9 log
+   permit tcp Any host www.web311.com eq 5060 log
+   permit tcp Any host www.web311.com eq 79 log
+   permit tcp Any host www.web311.com eq 1720 log
+   permit tcp Any host www.web311.com eq 123 log
+   permit icmp Any host www.web311.com log
  int gi 3
-  ip ______  ___  ___
+  ip access-group NOJOLLIBEEPLS in
   end
   
   
@@ -1140,7 +1174,7 @@ ping 192.168.103.11
 sudo su
 ifconfig eth0 192.168.103.23 netmask 255.255.255.0 up
 route add default gw 192.168.103.11
-
+ping 192.168.103.11
 
 
 
@@ -1215,10 +1249,30 @@ show ip nat translation
 
 Now open 208.8.8.101:8080 on browser
 
+@bldg
+adduser rivan
+pass
+pass
 
+Portforward SSH Session to BLDGS
 
-
-
+@UTN-PH
+conf t
+ ip nat inside source static tcp 192.168.103.21 22 208.8.8.101 4069
+ end
+ 
+ configure the ff:
+ 208.8.8.102 8443 => 192.168.103.22 443
+ 208.8.8.102 6050 => 192.168.103.23 22
+ 
+ conf t
+ no ip nat inside source static tcp 192.168.103.22 443 208.8.8.102 8443
+ end
+ 
+ conf t
+ no ip nat inside source static tcp 192.168.103.23 22 208.8.8.102 6050
+ end
+ 
 
 __________
 **********
